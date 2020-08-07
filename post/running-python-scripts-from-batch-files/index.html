@@ -105,7 +105,8 @@
         
         </div>
 
-    <p>Folder structure:</p>
+    <p>How to run python scritps from batch file using other python files as imports</p>
+<p>Folder structure:</p>
 <pre><code>└── temp
     ├── Module
     │   ├── moduleA.py
@@ -116,10 +117,8 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_numbers</span>(x, y):
     <span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y
 </code></pre></div><h3 id="modulebpy">moduleB.py</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
-<span style="color:#f92672">from</span> Module <span style="color:#f92672">import</span> moduleA
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> Module <span style="color:#f92672">import</span> moduleA
 
-os<span style="color:#f92672">.</span>chdir(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>dirname(__file__))
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     <span style="color:#66d9ef">print</span>(moduleA<span style="color:#f92672">.</span>add_numbers(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">10</span>))
@@ -135,8 +134,15 @@ to run: <code>&quot;path/to/python.exe&quot; -m Module.moduleB</code>. <a href="
 more information on using the <code>-m</code> flag.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd <span style="color:#e6db74">&#34;path/to/project&#34;</span>
 <span style="color:#e6db74">&#34;path/to/python.exe&#34;</span> -m Module.moduleB
-</code></pre></div><h4 id="more-on-pathtopythonexe">More on &ldquo;path/to/python.exe&rdquo;</h4>
-
+</code></pre></div><h4 id="more-on-pathtopythonexe-and-environments">More on &ldquo;path/to/python.exe&rdquo; and environments</h4>
+<p>Often times you&rsquo;ll see a particular project will have its own environment(conda/venv/etc..)
+or want to create an environment to use for a project. This environment must be activated before
+running the python script from the batch file. I&rsquo;ve found that on Windows, must use <code>call activate ENVIRONMENT</code>
+from the batch file versus <code>activate ENVIRONMENT</code> normally used from the command line.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd <span style="color:#e6db74">&#34;path/to/project&#34;</span>
+call activate ENVIRONMENT
+<span style="color:#e6db74">&#34;path/to/python.exe&#34;</span> -m Module.moduleB
+</code></pre></div>
     </div>
     <div class="post-footer">
       <div class="info">

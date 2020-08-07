@@ -17,8 +17,7 @@
       <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ericpettengill.github.io/post/running-python-scripts-from-batch-files/</guid>
-      <description>Folder structure:
-└── temp ├── Module │ ├── moduleA.py │ └── moduleB.</description>
+      <description>How to run python scritps from batch file using other python files as imports</description>
     </item>
     
     <item>
@@ -27,7 +26,7 @@
       <pubDate>Thu, 09 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ericpettengill.github.io/post/parallelizing-api-calls-using-python/</guid>
-      <description>This comes from a project at work where I had to make many GET requests on an api.</description>
+      <description>This comes from a project where I had to make many GET requests on an api.</description>
     </item>
     
   </channel>

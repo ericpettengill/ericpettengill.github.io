@@ -20,7 +20,7 @@
 <meta name="twitter:image" content="https://ericpettengill.github.io/images/site-feature-image.png"/>
 
 <meta name="twitter:title" content="Parallelizing API calls using python"/>
-<meta name="twitter:description" content="This comes from a project at work where I had to make many GET requests on an api."/>
+<meta name="twitter:description" content="This comes from a project where I had to make many GET requests on an api."/>
 
 </head><body><div class="sidebar animated fadeInDown">
     <div class="logo-title">
@@ -105,8 +105,13 @@
         
         </div>
 
-    <p>This comes from a project at work where I had to make many GET requests on an api. Each request was structured the same but with different parameters. To speed this up I utilized the <code>concurrent.futures</code> python module to parallelize requests.</p>
-<p>To start, I created a dataframe of all the parameters needed for each request and put them into a list as the method I used within <code>concurrent.futures</code> requires a list(more on this later). Also created helper functions to form the api URL and make the request. To make the GET requests, I utilized the <a href="https://requests.readthedocs.io/en/master/">Requests</a> module.</p>
+    <p>This comes from a project where I had to make many GET requests on an api.
+Each request was structured the same but with different parameters.
+To speed this up I utilized the <code>concurrent.futures</code> python module to parallelize requests.</p>
+<p>To start, I created a dataframe of all the parameters needed for each request and put them into a list as
+the method I used within <code>concurrent.futures</code> requires a list(more on this later). Also created helper functions
+to form the api URL and make the request. To make the GET requests,
+I utilized the <a href="https://requests.readthedocs.io/en/master/">Requests</a> module.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
 <span style="color:#f92672">import</span> requests
 <span style="color:#f92672">import</span> concurrent.futures
