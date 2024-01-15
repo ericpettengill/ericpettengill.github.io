@@ -70,24 +70,6 @@ a{
     padding-left: 0;
     width: 100px;
 }
-/* animations / utilities */
-.section-2 a:hover{
-    font-size: 0.9rem;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.section-1 a:hover{
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.white:hover{
-    position: relative;
-    padding-left: 10px;
-}
 
 /* media queres */
 @media(max-width:780px){
@@ -111,3 +93,19 @@ a{
     /* height: 180px; */
     border-radius: 50%;
 }
+
+#gallery {
+    line-height:0;
+    -webkit-column-count:3; /* split it into 5 columns */
+    -webkit-column-gap:5px; /* give it a 5px gap between columns */
+    -moz-column-count:3;
+    -moz-column-gap:5px;
+    column-count:3;
+    column-gap:5px;
+ }
+
+ #gallery img {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom:5px; /* to match column gap */
+ }
